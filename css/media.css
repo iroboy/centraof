@@ -614,6 +614,7 @@
 
     .shop {
         font-size: 24px !important;
+        white-space: no-wrap;
     }
 
     .family, .work {
