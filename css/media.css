@@ -1,0 +1,622 @@
+@import url(./style.css);
+
+
+
+@media(max-width: 1441px) {
+
+    /* Index.html */
+
+    .main-title {
+        font-size: 125px;
+    }
+
+
+    .main-subtitle-title {
+        font-size: 57px;
+        margin-left: 311px;
+    }
+
+    .header-btn {
+        font-size: 18px;
+        padding: 20px 15px;
+    }
+
+    .main-text-p {
+        max-width: 545px;
+    }
+
+    .main-text {
+        padding-top: 240px;
+    }
+
+    /* Index.html */
+
+
+    /* Contacts */
+
+    .contacts-name {
+        font-size: 110px;
+    }
+
+    .non-main {
+        height: 672px;
+    }
+
+    /* Contacts */
+
+
+    /*  Mission */
+
+
+
+    /*  Mission */
+
+
+    .vakances-card {
+        padding: 15px 40px;
+    }
+
+    .vakances-card-img {
+        width: 70%;
+    }
+
+    .vakances-card-title {
+        font-size: 28px;
+    }
+
+    .vakances-card-descr {
+        font-size: 19px;
+    }
+
+    .vakances-cards-wrapper {
+        padding-left: 0;
+        padding-right: 0;
+        justify-content: center;
+        column-gap: 120px;
+    }
+
+
+    .shop-indoors {
+        margin-left: 0;
+        margin-bottom: 128px;
+    }
+
+    .shop-descr {
+        font-size: 25px;
+    }
+
+    .shop-text {
+        display: inline-block;
+    }
+
+    .family, .work {
+        text-align: center;
+    }
+}
+
+
+
+@media(max-width: 1025px) {
+
+    .logo {
+        width: 186px;
+        height: 33px;
+    }
+
+    .nav-list {
+        column-gap: 50px;
+    }
+
+    .nav-link {
+        font-size: 16px;
+    }
+
+    .nav-link__dropped {
+        font-size: 14px;
+    }
+
+    .about::after {
+        display: none !important;
+    }
+
+    .about::before {
+        display: block !important;
+        right: -17px;
+    }
+
+    .nav-link__drop-cont hr {
+        margin-bottom: 8px;
+        margin-top: 8px;
+    }
+
+    .up-dropped {
+        margin-top: 8px;
+    }
+
+    .down-dropped {
+        margin-bottom: 8px;
+    }
+
+    .down-is-active {
+        display: initial;
+    }
+
+    .main-title {
+        font-size: 110px;
+        line-height: 80px;
+    }
+
+    .main-subtitle-title {
+        font-size: 48px;
+        margin-left: 280px;
+    }
+
+    .main-text-p {
+        margin-top: 7px;
+        font-size: 18px;
+        line-height: 27px;
+        margin-bottom: 21px;
+    }
+
+
+    .team-cards {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        column-gap: 70px;
+        padding-bottom: 100px;
+    }
+
+    .team-card-img-high {
+        width: 70%;
+    }
+
+    .team-card-img-leader {
+        width: 60%;
+    }
+
+    .team-card-name {
+        font-size: 17px;
+    }
+
+    .team-card-bottom {
+        padding-left: 60px;
+        padding-right: 60px;
+        padding-top: 14px;
+        padding-bottom: 14px;
+    }
+
+    .leader-name {
+        font-size: 28px;
+    }
+
+    .leader-descr {
+        font-size: 23px;
+    }
+
+    .team-card-leader {
+        margin-bottom: 80px;
+    }
+
+    .team-card-bottom-leader {
+        padding-left: 85px;
+        padding-right: 85px;
+        padding-top: 20px;
+        padding-bottom: 22px;
+
+    }
+
+    .team-card-descr {
+        font-size: 13px;
+    }
+
+    /* .center-card {
+        margin-top: 30px;
+    } */
+
+    .vakances-card {
+        padding: 15px 10px;
+        text-align: center;
+        box-shadow: 0px 13px 30px 0px rgba(0, 0, 0, 0.5)
+    }
+
+    .vakances-card-img {
+        width: 50%;
+    }
+
+    .vakances-card-title {
+        font-size: 19px;
+    }
+
+    .vakances-card-descr {
+        font-size: 12px;
+        width: 175px;
+        display: inline-block;
+    }
+
+    .vakances-cards-wrapper {
+        padding-left: 0;
+        padding-right: 0;
+        justify-content: center;
+        column-gap: 55px;
+        padding-bottom: 100px;
+    }
+
+
+    .shop-descr {
+        font-size: 17px;
+    }
+    .shop-text {
+        max-width: 500px;
+    }
+
+    .shop-indoors {
+        margin-left: 0;
+        margin-bottom: 128px;
+        width: 80%;
+        margin-bottom: 70px;
+    }
+
+    .shop-outdoors {
+        width: 80%;
+    }
+
+    .contacts-name {
+        font-size: 75px;
+    }
+
+    .family, .work {
+        font-size: 24px;
+        text-align: center;
+    }
+}
+
+
+
+@media(max-width: 850px) {
+    .nav {
+        display: none;
+    }
+
+    .nav-mobile-ico {
+        display: block;
+    }
+
+    .nav-mobile-link {
+        font-size: 30px;
+    }
+
+    .nav-mobile-link-dropped  {
+        font-size: 20px;
+    }
+
+    .arrow-down-mobile {
+        margin: 0;
+        width: 2%;
+        margin-top: 12px;
+        margin-left: 5px;
+    }
+
+    .card-bottom {
+        margin-top: 30px;
+    }
+
+    .leader-name {
+        font-size: 24px;
+    }
+
+    .leader-descr {
+        font-size: 19px;
+    }
+
+    .family, .work {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .vakances-cards-wrapper {
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        row-gap: 40px;
+        padding-bottom: 100px;
+    }
+
+    .vakances-card {
+        text-align: center;
+        box-shadow: 0px 13px 20px 0px rgba(0, 0, 0, 0.3);
+        width: 300px;
+    }
+
+    .vakances-card-img {
+        width: 50%;
+    }
+
+    .vakances-card-title {
+        font-size: 22px;
+    }
+
+    .vakances-card-descr {
+        font-size: 18px;
+        width: 175px;
+        display: inline-block;
+    }
+
+    .vakances-card-descr:nth-child(3) {
+        font-size: 18px;
+        width: 250px;
+        display: inline-block;
+    }
+
+    .vakances-cards-wrapper {
+        padding-left: 0;
+        padding-right: 0;
+        justify-content: center;
+        column-gap: 55px;
+    }
+
+    .shop-descr {
+        font-size: 15px;
+    }
+    .shop-text {
+        max-width: 400px;
+    }
+
+    .shop-indoors {
+        margin-left: 0;
+        margin-bottom: 128px;
+        width: 85%;
+        margin-bottom: 70px;
+    }
+
+    .shop-outdoors {
+        width: 85%;
+        margin-left: 40px;
+    }
+
+    .contacts-data {
+        margin-top: 40px;
+    }
+    
+    .team-cards {
+        padding-bottom: 100px;
+    }
+
+
+}
+
+
+
+@media (max-width: 426px) {
+    .logo {
+        width: 130px;
+        height: 24px;
+    }
+
+    .logo::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        left: 0;
+        top: 0;
+        filter: blur(20px);
+        opacity: 0.4;
+        z-index: -1;
+    }
+
+    .header-top {
+        padding-top: 39px;
+        padding-bottom: 39px;
+    }
+
+    .arrow-down-mobile {
+        margin: 0;
+        width: 4%;
+        margin-top: 15px;
+        margin-left: 5px;
+    }
+
+    .nav-mobile-close {
+        width: 18px;
+        height: 18px;
+    }
+
+    .main-text {
+        text-align: center;
+        padding-top: 180px;
+    }
+
+    .main-title {
+        font-size: 85px;
+        
+    }
+
+    .main-subtitle-title {
+        font-size: 36px;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .history-text {
+        font-size: 14px;
+    }
+
+    .mission-p {
+        font-size: 20px;
+    }
+
+    .non-main {
+        height: 500px !important;
+    }
+
+    .galery-title {
+        font-size: 24px;
+    }
+
+    .galery-top {
+        margin-bottom: 50px;
+    }
+
+    .family, .work {
+        font-size: 19px;
+        text-align: center;
+    }
+
+    .work {
+        margin-bottom: 30px;
+    }
+
+    .contacts-name {
+        font-size: 69px;
+    }
+
+    .card-bottom {
+        margin: 0;
+    }
+
+    .team-cards {
+        display: flex;
+        flex-direction: column;
+        row-gap: 40px;
+        padding-bottom: 50px;
+    }
+
+    .vakances-card-title {
+        font-size: 19px;
+    }
+
+    .vakances-card-descr {
+        font-size: 15px;
+    }
+
+    .vakances-card-descr:nth-child(3) {
+        font-size: 15px;
+        width: 200px;
+    }
+
+    .vakances-card {
+        text-align: center;
+        box-shadow: 0px 13px 15px 0px rgba(0, 0, 0, 0.25);
+        width: 275px;
+    }
+
+    .vakances-cards-wrapper {
+        justify-content: center;
+        padding-bottom: 50px;
+    }
+
+    .shop {
+        font-size: 45px !important;
+    }
+
+    .shop-video {
+        height: 450px !important;
+    }
+
+    .shop-descr {
+        font-size: 12px;
+        margin-top: 20px;
+    }
+
+    .shop-indoors {
+        margin-bottom: 30px;
+        width: 300%;
+    }
+
+    .shop-outdoors {
+        margin-left: 20px;
+    }
+
+}
+
+
+
+
+@media (max-width: 376px) {
+    .logo {
+        width: 96px;
+        height: 18px;
+    }
+
+    .contact-title {
+        padding-top: 100px;
+    }
+
+    .shop {
+        font-size: 35px !important;
+    }
+
+    .shop-video {
+        height: 400px !important;
+    }
+
+    .non-main {
+        height: 400px !important;
+    }
+
+    .shop-indoors {
+        margin-bottom: 112px;
+    }
+
+    .shop-descr {
+        font-size: 11px;
+    }
+
+    .shop-outdoors {
+        margin-bottom: 40px;
+    }
+
+    .contacts-name {
+        font-size: 59px;
+    }
+}
+
+@media (max-width: 321px) {
+    .contacts-name {
+        font-size: 47px;
+    }
+
+    .vakances-card {
+        width: 225px;
+    }
+
+    .vakances-card-title {
+        font-size: 16px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .vakances-card-descr {
+        font-size: 12px;
+    }
+
+    .vakances-card-descr:nth-child(3) {
+        font-size: 12px;
+        width: 150px;
+    }
+
+    .contacts-data {
+        margin-top: 40px;   
+    }
+
+    .galery-imgs {
+        margin-bottom: 10px;
+    }
+
+    .shop-indoors {
+        margin-bottom: 123px;
+    }
+
+    .shop {
+        font-size: 30px !important;
+    }
+
+    .family, .work {
+        font-size: 16px;
+    }
+}
