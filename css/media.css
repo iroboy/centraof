@@ -578,7 +578,7 @@
 
 @media (max-width: 321px) {
     .contacts-name {
-        font-size: 40px;
+        font-size: 47px;
     }
 
     .vakances-card {
@@ -613,7 +613,7 @@
     }
 
     .shop {
-        font-size: 30px !important;
+        font-size: 24px !important;
     }
 
     .family, .work {
