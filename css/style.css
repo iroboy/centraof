@@ -526,6 +526,9 @@ body {
     justify-content: center;
 }
 
+.shop {
+    white-space: no-wrap;
+}
 
 
 /* Shop */
