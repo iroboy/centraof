@@ -35,8 +35,10 @@
         margin-bottom: 0px;
     }
 
-    .ship-card {
-        user-select: none;
+    .ship-card,
+    .ship-card * {
+      -webkit-tap-highlight-color: transparent;
+      tap-highlight-color: transparent; /* запас для других движков */
     }
 
 }
@@ -488,6 +490,7 @@
     }
 
 }
+
 
 
 
