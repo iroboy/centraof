@@ -3,6 +3,14 @@
 
 
 
+@media (hover: none) and (pointer: coarse) {
+    *:hover {
+        all: unset !important;
+    }
+}
+
+
+
 @media(max-width: 1700px) {
     .about-arrows {
         display: none !important;
@@ -481,4 +489,5 @@
         height: 35px;
         font-size: 22px;
     }
+
 }
