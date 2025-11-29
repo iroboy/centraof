@@ -36,10 +36,13 @@
     }
 
     .ship-card,
-    .ship-card *,
-    .arrow {
+    .ship-card * {
       -webkit-tap-highlight-color: transparent;
       tap-highlight-color: transparent; /* запас для других движков */
+    }
+
+    .arrow {
+        -webkit-tap-highlight-color: transparent;
     }
 
 }
@@ -491,6 +494,7 @@
     }
 
 }
+
 
 
 
