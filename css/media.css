@@ -35,6 +35,11 @@
         margin-bottom: 0px;
     }
 
+    .ship-modal-overlay,
+    .ship-modal-wrapper {
+        user-select: none;
+    }
+
 }
 
 @media(max-width: 1067px) {
@@ -484,6 +489,7 @@
     }
 
 }
+
 
 
 
