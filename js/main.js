@@ -200,6 +200,32 @@ document.querySelectorAll('.nav-link').forEach(link => {
 });
 
 
+function convertHoverToActive() {
+    for (const sheet of document.styleSheets) {
+        let rules;
+        try { rules = sheet.cssRules; } catch { continue; }
+
+        for (let i = 0; i < rules.length; i++) {
+            const rule = rules[i];
+
+            if (rule.selectorText && rule.selectorText.includes(':hover')) {
+                const activeSelector = rule.selectorText.replace(/:hover/g, ':active');
+                
+                sheet.insertRule(
+                    `${activeSelector} { ${rule.style.cssText} }`,
+                    sheet.cssRules.length
+                );
+            }
+        }
+    }
+}
+
+if (matchMedia("(hover: none)").matches) {
+    convertHoverToActive();
+}
+
+
+
 
 
 
