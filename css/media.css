@@ -35,8 +35,7 @@
         margin-bottom: 0px;
     }
 
-    .ship-modal-overlay,
-    .ship-modal-wrapper {
+    .ship-card {
         user-select: none;
     }
 
@@ -489,6 +488,7 @@
     }
 
 }
+
 
 
 
