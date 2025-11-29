@@ -842,7 +842,7 @@ body {
 }
 
 .no-scroll {
-    overflow: hidden;
+    overflow: hidden !important;
 }
 
 .pontons-anchor-modal-title {
@@ -986,6 +986,7 @@ body {
 
 
 /* Pontons-Anchors */
+
 
 
 
