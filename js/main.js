@@ -200,29 +200,38 @@ document.querySelectorAll('.nav-link').forEach(link => {
 });
 
 
-function convertHoverToActive() {
-    for (const sheet of document.styleSheets) {
-        let rules;
-        try { rules = sheet.cssRules; } catch { continue; }
+// Проверяем, поддерживает ли устройство touch
+if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+  // Получаем все стили на странице
+  const sheets = document.styleSheets;
 
-        for (let i = 0; i < rules.length; i++) {
-            const rule = rules[i];
-
-            if (rule.selectorText && rule.selectorText.includes(':hover')) {
-                const activeSelector = rule.selectorText.replace(/:hover/g, ':active');
-                
-                sheet.insertRule(
-                    `${activeSelector} { ${rule.style.cssText} }`,
-                    sheet.cssRules.length
-                );
-            }
-        }
+  for (let i = 0; i < sheets.length; i++) {
+    let rules;
+    try {
+      rules = sheets[i].cssRules;
+    } catch (e) {
+      // Иногда доступ к внешним стилям запрещен (CORS)
+      continue;
     }
+    if (!rules) continue;
+
+    for (let j = 0; j < rules.length; j++) {
+      const rule = rules[j];
+      if (rule.selectorText && rule.selectorText.includes(':hover')) {
+        // Создаем новый селектор с :active вместо :hover
+        const activeSelector = rule.selectorText.replace(/:hover/g, ':active');
+        const cssText = rule.cssText.replace(rule.selectorText, activeSelector);
+
+        // Добавляем новый CSS в конец документа
+        const style = document.createElement('style');
+        style.appendChild(document.createTextNode(cssText));
+        document.head.appendChild(style);
+      }
+    }
+  }
 }
 
-if (matchMedia("(hover: none)").matches) {
-    convertHoverToActive();
-}
+
 
 
 
