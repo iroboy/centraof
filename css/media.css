@@ -3,17 +3,6 @@
 
 
 
-@media (hover: none) {
-    *:hover {
-        background: none !important;
-        color: inherit !important;
-        border-color: inherit !important;
-        transform: none !important;
-        box-shadow: none !important;
-    }
-}
-
-
 
 @media(max-width: 1700px) {
     .about-arrows {
@@ -495,5 +484,6 @@
     }
 
 }
+
 
 
