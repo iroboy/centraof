@@ -5,7 +5,11 @@
 
 @media (hover: none) and (pointer: coarse) {
     *:hover {
-        all: unset !important;
+        background: none !important;
+        color: inherit !important;
+        border-color: inherit !important;
+        transform: none !important;
+        box-shadow: none !important;
     }
 }
 
@@ -491,3 +495,4 @@
     }
 
 }
+
