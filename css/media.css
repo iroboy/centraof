@@ -3,7 +3,7 @@
 
 
 
-@media (hover: none) and (pointer: coarse) {
+@media (hover: none) {
     *:hover {
         background: none !important;
         color: inherit !important;
@@ -495,4 +495,5 @@
     }
 
 }
+
 
