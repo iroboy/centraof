@@ -200,36 +200,33 @@ document.querySelectorAll('.nav-link').forEach(link => {
 });
 
 
-// Проверяем, поддерживает ли устройство touch
-if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
-  // Получаем все стили на странице
-  const sheets = document.styleSheets;
+window.addEventListener('DOMContentLoaded', () => {
+  if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+    const sheets = document.styleSheets;
 
-  for (let i = 0; i < sheets.length; i++) {
-    let rules;
-    try {
-      rules = sheets[i].cssRules;
-    } catch (e) {
-      // Иногда доступ к внешним стилям запрещен (CORS)
-      continue;
-    }
-    if (!rules) continue;
+    for (let i = 0; i < sheets.length; i++) {
+      let rules;
+      try {
+        rules = sheets[i].cssRules;
+      } catch (e) {
+        continue; // Не можем получить доступ к внешним CSS (CORS)
+      }
+      if (!rules) continue;
 
-    for (let j = 0; j < rules.length; j++) {
-      const rule = rules[j];
-      if (rule.selectorText && rule.selectorText.includes(':hover')) {
-        // Создаем новый селектор с :active вместо :hover
-        const activeSelector = rule.selectorText.replace(/:hover/g, ':active');
-        const cssText = rule.cssText.replace(rule.selectorText, activeSelector);
+      for (let j = 0; j < rules.length; j++) {
+        const rule = rules[j];
+        if (rule.selectorText && rule.selectorText.includes(':hover')) {
+          const activeSelector = rule.selectorText.replace(/:hover/g, ':active');
+          const cssText = rule.cssText.replace(rule.selectorText, activeSelector);
 
-        // Добавляем новый CSS в конец документа
-        const style = document.createElement('style');
-        style.appendChild(document.createTextNode(cssText));
-        document.head.appendChild(style);
+          const style = document.createElement('style');
+          style.appendChild(document.createTextNode(cssText));
+          document.head.appendChild(style);
+        }
       }
     }
   }
-}
+});
 
 
 
