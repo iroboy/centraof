@@ -36,7 +36,8 @@
     }
 
     .ship-card,
-    .ship-card * {
+    .ship-card *,
+    .arrow {
       -webkit-tap-highlight-color: transparent;
       tap-highlight-color: transparent; /* запас для других движков */
     }
@@ -490,6 +491,7 @@
     }
 
 }
+
 
 
 
