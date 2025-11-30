@@ -334,6 +334,42 @@ window.addEventListener('DOMContentLoaded', () => {
   // Доп: если элементы динамически появляются, делегация всё равно сработает.
 })();
 
+// Сбрасываем active у навигационных ссылок после клика
+document.addEventListener('click', (e) => {
+    const navLink = e.target.closest('.nav-link');
+    if (navLink) {
+        navLink.classList.remove('active');
+    }
+});
+
+// Сброс active у ship-card__button после клика (например, перед открытием модалки)
+document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.ship-card__button');
+    if (btn) {
+        btn.classList.remove('active');
+    }
+});
+
+function resetAllActive() {
+    document.querySelectorAll('.active').forEach(el => el.classList.remove('active'));
+}
+
+// Когда закрывается ship-modal
+document.addEventListener('click', (e) => {
+    if (e.target.closest('.ship-modal-close') ||
+        e.target.classList.contains('ship-modal-overlay')) {
+        resetAllActive();
+    }
+});
+
+// Когда закрывается pontons-anchor-modal
+document.addEventListener('click', (e) => {
+    if (e.target.closest('.pontons-anchor-modal-close') ||
+        e.target.closest('.pontons-anchor-modal')) {
+        resetAllActive();
+    }
+});
+
 
 
 
