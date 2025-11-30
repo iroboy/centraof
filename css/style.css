@@ -987,7 +987,6 @@ body {
 
 /* Pontons-Anchors */
 
-
 .nav-link:active,
 .nav-link.active {
     color: #d1a57e;
@@ -1012,7 +1011,6 @@ body {
     color: #ffffff;
     background-color: #0B0E33;
     border: 1px solid #ffffff;
-    /* scale свойство в стандартном виде: */
     transform: scale(1.02);
 }
 
@@ -1040,6 +1038,8 @@ body {
 .pontons-anchor-modal-close.active .line2 {
     background-color: #d1a57e;
 }
+
+
 
 
 
