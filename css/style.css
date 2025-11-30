@@ -987,58 +987,6 @@ body {
 
 /* Pontons-Anchors */
 
-.nav-link:active,
-.nav-link.active {
-    color: #d1a57e;
-}
-
-.nav-button:active,
-.nav-button.active {
-    color: #fff;
-    background-color: #27213d;
-}
-
-.ship-card:active .ship-card__button,
-.ship-card.active .ship-card__button {
-    color: #ffffff;
-    background-color: #0B0E33;
-    border: 1px solid #ffffff;
-    transform: scale(1.02);
-}
-
-.ship-card__button:active,
-.ship-card__button.active {
-    color: #ffffff;
-    background-color: #0B0E33;
-    border: 1px solid #ffffff;
-    transform: scale(1.02);
-}
-
-.custom-arrow:active,
-.custom-arrow.active {
-    background-color: #27213d;
-}
-
-.custom-arrow:active::before,
-.custom-arrow.active::before {
-    color: #fff;
-}
-
-.pontons-anchor-button:active,
-.pontons-anchor-button.active {
-    background-color: #d1a57e;
-}
-
-.pontons-anchor-modal-close:active .line1,
-.pontons-anchor-modal-close.active .line1 {
-    background-color: #d1a57e;
-}
-
-.pontons-anchor-modal-close:active .line2,
-.pontons-anchor-modal-close.active .line2 {
-    background-color: #d1a57e;
-}
-
 
 
 
