@@ -305,6 +305,50 @@ document.querySelectorAll('.nav-link').forEach(link => {
 
 })();
 
+// Снять active у конкретного элемента (если он есть)
+function removeActive(el) {
+    if (el) el.classList.remove('active');
+}
+
+// Сбросить active у всех элементов на странице
+function resetAllActive() {
+    document.querySelectorAll('.active').forEach(el => el.classList.remove('active'));
+}
+
+/* === 1. Навигационные ссылки (.nav-link) === */
+document.addEventListener('click', (e) => {
+    const link = e.target.closest('.nav-link');
+    if (link) removeActive(link);
+});
+
+/* === 2. Кнопки карточек (.ship-card__button) === */
+document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.ship-card__button');
+    if (btn) removeActive(btn);
+});
+
+/* === 3. Закрытие ship-modal === */
+document.addEventListener('click', (e) => {
+    if (
+        e.target.closest('.ship-modal-close') ||
+        e.target.classList.contains('ship-modal-overlay')
+    ) {
+        resetAllActive();
+    }
+});
+
+/* === 4. Закрытие pontons-anchor-modal === */
+document.addEventListener('click', (e) => {
+    if (
+        e.target.closest('.pontons-anchor-modal-close') ||
+        e.target.closest('.pontons-anchor-modal')
+    ) {
+        resetAllActive();
+    }
+});
+
+
+
 
 
 
