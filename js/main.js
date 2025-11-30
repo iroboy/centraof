@@ -229,6 +229,56 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 
+(function() {
+  if (!('ontouchstart' in window) && navigator.maxTouchPoints === 0) return;
+
+  // Список селекторов, к которым нужно добавить поведение.
+  // Для селекторов, где hover влияет на потомка, мы помечаем "useParent: true".
+  const targets = [
+    { sel: '.nav-link' },
+    { sel: '.nav-button' },
+    { sel: '.ship-card', useParent: true }, // .ship-card:hover .ship-card__button -> добавляем .active на .ship-card
+    { sel: '.ship-card__button' },
+    { sel: '.custom-arrow' },
+    { sel: '.pontons-anchor-button' },
+    { sel: '.pontons-anchor-modal-close', useParent: true } // влияет на .line1/.line2 внутри
+  ];
+
+  function addTouchHandlers(el, useParent) {
+    const node = useParent ? el : el;
+    let activeTimeout = null;
+
+    const add = (e) => {
+      // prevent immediate click double-trigger issues on some browsers
+      if (activeTimeout) clearTimeout(activeTimeout);
+      node.classList.add('active');
+    };
+    const remove = (e) => {
+      // немного задержки, чтобы пользователь видел эффект
+      if (activeTimeout) clearTimeout(activeTimeout);
+      activeTimeout = setTimeout(() => node.classList.remove('active'), 50);
+    };
+
+    el.addEventListener('touchstart', add, { passive: true });
+    el.addEventListener('touchend', remove, { passive: true });
+    el.addEventListener('touchcancel', remove, { passive: true });
+
+    // Кроме touch, полезно поддержать и mouse для теста на десктопе
+    el.addEventListener('mousedown', () => node.classList.add('active'));
+    el.addEventListener('mouseup', () => node.classList.remove('active'));
+    el.addEventListener('mouseleave', () => node.classList.remove('active'));
+  }
+
+  targets.forEach(item => {
+    const els = document.querySelectorAll(item.sel);
+    if (!els || els.length === 0) return;
+    els.forEach(el => addTouchHandlers(item.useParent ? el : el, item.useParent));
+  });
+
+})();
+
+
+
 
 
 
