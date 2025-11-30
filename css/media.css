@@ -2,12 +2,153 @@
 @import url('./style.css');
 
 
+@media(hover: hover) and (pointer: fine) { 
+    .nav-link:hover {
+        color: #d1a57e;
+    }
+
+    .nav-button:hover {
+        color: #fff;
+        background-color: #27213d;
+    }
+
+    .ship-card:hover .ship-card__button {
+        color: #ffffff;
+        background-color: #0B0E33;
+        border: 1px solid #ffffff;
+        transform: scale(1.02);
+    }
+
+    .ship-card__button:hover {
+        color: #ffffff;
+        background-color: #0B0E33;
+        border: 1px solid #ffffff;
+        scale: 1.02;
+    }
+
+    .custom-arrow:hover {
+        background-color: #27213d;
+    }
+    
+    .custom-arrow:hover::before {
+        color: #fff;
+    }
+
+    .pontons-anchor-button:hover {
+        background-color: #d1a57e;
+    }
+
+    .pontons-anchor-modal-close:hover .line1 {
+        background-color: #d1a57e;
+    }
+    
+    .pontons-anchor-modal-close:hover .line2 {
+        background-color: #d1a57e;
+    }
+}
+
+@media(hover: none) and (pointer: course) {
+    .nav-link:active {
+        color: #d1a57e;
+    }
+
+    .nav-button:active {
+        color: #fff;
+        background-color: #27213d;
+    }
+
+    .ship-card:active .ship-card__button {
+        color: #ffffff;
+        background-color: #0B0E33;
+        border: 1px solid #ffffff;
+        transform: scale(1.02);
+    }
+
+    .ship-card__button:active {
+        color: #ffffff;
+        background-color: #0B0E33;
+        border: 1px solid #ffffff;
+        scale: 1.02;
+    }
+
+    .custom-arrow:active {
+        background-color: #27213d;
+    }
+    
+    .custom-arrow:active::before {
+        color: #fff;
+    }
+
+    .pontons-anchor-button:active {
+        background-color: #d1a57e;
+    }
+
+    .pontons-anchor-modal-close:active .line1 {
+        background-color: #d1a57e;
+    }
+    
+    .pontons-anchor-modal-close:active .line2 {
+        background-color: #d1a57e;
+    }
+}
+
+    .nav-link:active,
+    .nav-link.active {
+        color: #d1a57e;
+    }
+    
+    .nav-button:active,
+    .nav-button.active {
+        color: #fff;
+        background-color: #27213d;
+    }
+    
+    .ship-card:active .ship-card__button,
+    .ship-card.active .ship-card__button {
+        color: #ffffff;
+        background-color: #0B0E33;
+        border: 1px solid #ffffff;
+        transform: scale(1.02);
+    }
+    
+    .ship-card__button:active,
+    .ship-card__button.active {
+        color: #ffffff;
+        background-color: #0B0E33;
+        border: 1px solid #ffffff;
+        transform: scale(1.02);
+    }
+    
+    .custom-arrow:active,
+    .custom-arrow.active {
+        background-color: #27213d;
+    }
+    
+    .custom-arrow:active::before,
+    .custom-arrow.active::before {
+        color: #fff;
+    }
+    
+    .pontons-anchor-button:active,
+    .pontons-anchor-button.active {
+        background-color: #d1a57e;
+    }
+    
+    .pontons-anchor-modal-close:active .line1,
+    .pontons-anchor-modal-close.active .line1 {
+        background-color: #d1a57e;
+    }
+    
+    .pontons-anchor-modal-close:active .line2,
+    .pontons-anchor-modal-close.active .line2 {
+        background-color: #d1a57e;
+    }
 
 
 @media(max-width: 1700px) {
-    .about-arrows {
-        display: none !important;
-    }
+.about-arrows {
+    display: none !important;
+}
 
 }
 
@@ -137,85 +278,6 @@
     .about-company {
         margin-top: 50px;
         margin-bottom: 30px;
-    }
-
-    .nav-link:active,
-    .nav-link.active {
-        color: #d1a57e;
-    }
-    
-    .nav-button:active,
-    .nav-button.active {
-        color: #fff;
-        background-color: #27213d;
-    }
-    
-    .ship-card:active .ship-card__button,
-    .ship-card.active .ship-card__button {
-        color: #ffffff;
-        background-color: #0B0E33;
-        border: 1px solid #ffffff;
-        transform: scale(1.02);
-    }
-    
-    .ship-card__button:active,
-    .ship-card__button.active {
-        color: #ffffff;
-        background-color: #0B0E33;
-        border: 1px solid #ffffff;
-        transform: scale(1.02);
-    }
-    
-    .custom-arrow:active,
-    .custom-arrow.active {
-        background-color: #27213d;
-    }
-    
-    .custom-arrow:active::before,
-    .custom-arrow.active::before {
-        color: #fff;
-    }
-    
-    .pontons-anchor-button:active,
-    .pontons-anchor-button.active {
-        background-color: #d1a57e;
-    }
-    
-    .pontons-anchor-modal-close:active .line1,
-    .pontons-anchor-modal-close.active .line1 {
-        background-color: #d1a57e;
-    }
-    
-    .pontons-anchor-modal-close:active .line2,
-    .pontons-anchor-modal-close.active .line2 {
-        background-color: #d1a57e;
-    }
-
-    .ship-card__button:hover {
-        color: unset !important;
-        background-color: unset !important;
-        border: unset !important;
-        transform: unset !important;
-    }
-    
-    .custom-arrow:hover {
-        background-color: unset !important;
-    }
-    
-    .custom-arrow:hover::before {
-        color: unset !important;
-    }
-    
-    .pontons-anchor-button:hover {
-        background-color: unset !important;
-    }
-    
-    .pontons-anchor-modal-close:hover .line1 {
-        background-color: unset !important;
-    }
-    
-    .pontons-anchor-modal-close:hover .line2 {
-        background-color: unset !important;
     }
 
 }
@@ -573,6 +635,7 @@
     }
 
 }
+
 
 
 
