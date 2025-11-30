@@ -229,53 +229,112 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 
+// Надёжная делегация pointer-событий: добавляет .active при нажатии и убирает при отпускании.
+// Вставлять в конец body или в файл, который загружается после DOM.
 (function() {
-  if (!('ontouchstart' in window) && navigator.maxTouchPoints === 0) return;
+  // Если нет поддержки pointer events, всё равно используем touch/mouse fallback
+  const usePointer = window.PointerEvent !== undefined;
 
-  // Список селекторов, к которым нужно добавить поведение.
-  // Для селекторов, где hover влияет на потомка, мы помечаем "useParent: true".
-  const targets = [
-    { sel: '.nav-link' },
-    { sel: '.nav-button' },
-    { sel: '.ship-card', useParent: true }, // .ship-card:hover .ship-card__button -> добавляем .active на .ship-card
-    { sel: '.ship-card__button' },
-    { sel: '.custom-arrow' },
-    { sel: '.pontons-anchor-button' },
+  // Селекторы и флаг — нужно ли ставить .active на сам элемент (false) или на родителя (useParent true)
+  const config = [
+    { sel: '.nav-link', useParent: false },
+    { sel: '.nav-button', useParent: false },
+    { sel: '.ship-card', useParent: true },              // .ship-card:hover .ship-card__button
+    { sel: '.ship-card__button', useParent: false },
+    { sel: '.custom-arrow', useParent: false },
+    { sel: '.pontons-anchor-button', useParent: false },
     { sel: '.pontons-anchor-modal-close', useParent: true } // влияет на .line1/.line2 внутри
   ];
 
-  function addTouchHandlers(el, useParent) {
-    const node = useParent ? el : el;
-    let activeTimeout = null;
+  // Быстрый набор селекторов для поиска
+  const selectors = config.map(c => c.sel).join(',');
 
-    const add = (e) => {
-      // prevent immediate click double-trigger issues on some browsers
-      if (activeTimeout) clearTimeout(activeTimeout);
-      node.classList.add('active');
-    };
-    const remove = (e) => {
-      // немного задержки, чтобы пользователь видел эффект
-      if (activeTimeout) clearTimeout(activeTimeout);
-      activeTimeout = setTimeout(() => node.classList.remove('active'), 50);
-    };
+  // Хранение активных элементов и таймаутов
+  const activeMap = new WeakMap();
 
-    el.addEventListener('touchstart', add, { passive: true });
-    el.addEventListener('touchend', remove, { passive: true });
-    el.addEventListener('touchcancel', remove, { passive: true });
-
-    // Кроме touch, полезно поддержать и mouse для теста на десктопе
-    el.addEventListener('mousedown', () => node.classList.add('active'));
-    el.addEventListener('mouseup', () => node.classList.remove('active'));
-    el.addEventListener('mouseleave', () => node.classList.remove('active'));
+  function findConfigForElement(el) {
+    // Ищем первый конфиг, где el.closest(sel) существует
+    for (let c of config) {
+      const found = el.closest(c.sel);
+      if (found) return { config: c, matched: found };
+    }
+    return null;
   }
 
-  targets.forEach(item => {
-    const els = document.querySelectorAll(item.sel);
-    if (!els || els.length === 0) return;
-    els.forEach(el => addTouchHandlers(item.useParent ? el : el, item.useParent));
-  });
+  function addActive(node) {
+    if (!node) return;
+    if (activeMap.has(node)) {
+      const t = activeMap.get(node);
+      if (t.timeout) clearTimeout(t.timeout);
+    } else {
+      activeMap.set(node, {});
+    }
+    node.classList.add('active');
+  }
 
+  function removeActive(node, delay = 50) {
+    if (!node) return;
+    const record = activeMap.get(node) || {};
+    if (record.timeout) clearTimeout(record.timeout);
+    record.timeout = setTimeout(() => {
+      node.classList.remove('active');
+      activeMap.delete(node);
+    }, delay);
+    activeMap.set(node, record);
+  }
+
+  // Обработчики событий
+  function onDown(e) {
+    // Игнорируем не-touch/pen/mouse если хотим только для touch? Нет — поддерживаем pointer универсально.
+    const target = e.target;
+    const found = findConfigForElement(target);
+    if (!found) return;
+
+    const node = found.config.useParent ? found.matched : found.matched;
+    // Добавляем класс
+    addActive(node);
+  }
+
+  function onUp(e) {
+    const target = e.target;
+    const found = findConfigForElement(target);
+    if (!found) {
+      // возможно отпускание произошло в другом месте — снимем у всех активных (без агрессии)
+      // но не будем массово обходить DOM — просто снимем у тех, что есть в activeMap (если есть).
+      // Пройти все WeakMap нельзя — поэтому добавим небольшой общий timeout: при pointerup снимем у всех видимых .active
+      document.querySelectorAll('.active').forEach(n => removeActive(n, 30));
+      return;
+    }
+    const node = found.config.useParent ? found.matched : found.matched;
+    removeActive(node, 80);
+  }
+
+  // pointer fallback handlers for old browsers
+  function onTouchStart(e) { onDown(e); }
+  function onTouchEnd(e) { onUp(e); }
+
+  if (usePointer) {
+    document.addEventListener('pointerdown', onDown, { passive: true });
+    document.addEventListener('pointerup', onUp, { passive: true });
+    document.addEventListener('pointercancel', onUp, { passive: true });
+    // pointerleave for safety
+    document.addEventListener('pointerleave', onUp, { passive: true });
+  } else {
+    // touch fallback
+    document.addEventListener('touchstart', onTouchStart, { passive: true });
+    document.addEventListener('touchend', onTouchEnd, { passive: true });
+    document.addEventListener('touchcancel', onTouchEnd, { passive: true });
+
+    // mouse for desktop testing
+    document.addEventListener('mousedown', onDown);
+    document.addEventListener('mouseup', onUp);
+    document.addEventListener('mouseleave', onUp);
+  }
+
+  // Доп: если элементы динамически появляются, делегация всё равно сработает.
 })();
+
+
 
 
 
