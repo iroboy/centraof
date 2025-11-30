@@ -2,7 +2,8 @@
 @import url('./style.css');
 
 
-@media(hover: hover) and (pointer: fine) { 
+@media (hover: hover) and (pointer: fine) {
+
     .nav-link:hover {
         color: #d1a57e;
     }
@@ -23,7 +24,7 @@
         color: #ffffff;
         background-color: #0B0E33;
         border: 1px solid #ffffff;
-        scale: 1.02;
+        transform: scale(1.02);
     }
 
     .custom-arrow:hover {
@@ -47,7 +48,8 @@
     }
 }
 
-@media(hover: none) and (pointer: course) {
+@media (hover: none) and (pointer: coarse) {
+
     .nav-link:active {
         color: #d1a57e;
     }
@@ -57,11 +59,18 @@
         background-color: #27213d;
     }
 
+    .ship-card:active .ship-card__button {
+        color: #ffffff;
+        background-color: #0B0E33;
+        border: 1px solid #ffffff;
+        transform: scale(1.02);
+    }
+
     .ship-card__button:active {
         color: #ffffff;
         background-color: #0B0E33;
         border: 1px solid #ffffff;
-        scale: 1.02;
+        transform: scale(1.02);
     }
 
     .custom-arrow:active {
@@ -576,6 +585,7 @@
     }
 
 }
+
 
 
 
