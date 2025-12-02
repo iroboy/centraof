@@ -96,10 +96,9 @@
 
 
 @media(max-width: 1700px) {
-.about-arrows {
-    display: none !important;
-}
-
+    .about-arrows {
+        display: none !important;
+    }
 }
 
 
@@ -585,6 +584,7 @@
     }
 
 }
+
 
 
 
