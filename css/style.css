@@ -135,7 +135,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 50px 20px 50px 20px;
     transition: opacity .35s ease, visibility .35s ease;
     z-index: 9999;
 }
@@ -1076,6 +1076,7 @@ body {
 
 
 /* Pontons-Anchors */
+
 
 
 
