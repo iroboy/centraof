@@ -407,6 +407,12 @@
     .pontons-anchor-modal-form-inputs input {
         font-size: 16px;
     }
+
+    .ship-modal-close svg {
+        width: 60%;
+        height: 60%;
+    }
+
 }
 
 @media(max-width: 560px) {
@@ -584,6 +590,7 @@
     }
 
 }
+
 
 
 
