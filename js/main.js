@@ -200,6 +200,42 @@ document.querySelectorAll('.nav-link').forEach(link => {
 });
 
 
+document.querySelectorAll('.contacts').forEach(btn => {
+    const contactsOverlay = document.querySelector('.header-contacts-overlay');
+    const contactsWindow = document.querySelector('.header-contacts-window');
+    const contactsClose = contactsWindow.querySelector('.ship-modal-close');
+
+    // Открытие
+    btn.addEventListener('click', () => {
+        contactsOverlay.classList.add('show');
+        document.body.classList.add('no-scroll');
+    });
+
+    // Закрытие по кнопке
+    contactsClose.addEventListener('click', (e) => {
+        e.stopPropagation();
+        contactsOverlay.classList.remove('show');
+        document.body.classList.remove('no-scroll');
+    });
+
+    // Закрытие по клику по фону
+    contactsOverlay.addEventListener('click', (e) => {
+        if (e.target === contactsOverlay) {
+            contactsOverlay.classList.remove('show');
+            document.body.classList.remove('no-scroll');
+        }
+    });
+
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+            contactsOverlay.classList.remove('show');
+            document.body.classList.remove('no-scroll');
+        };
+    });
+});
+
+
+
 
 
 
