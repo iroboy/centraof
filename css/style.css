@@ -135,7 +135,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 50px 20px 50px 20px;
     transition: opacity .35s ease, visibility .35s ease;
     z-index: 9999;
 }
@@ -176,9 +175,7 @@ body {
 }
 
 .header-contacts-block {
-    padding: 20px;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding: 80px 20px 80px 20px;
     text-align: center;
 }
 .header-contacts-detail-title {
@@ -1076,6 +1073,7 @@ body {
 
 
 /* Pontons-Anchors */
+
 
 
 
