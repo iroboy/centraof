@@ -92,6 +92,10 @@ body {
     transition: all 0.22s ease-in-out;
 }
 
+.contacts {
+    background-color: transparent;
+}
+
 /* .nav-button:hover {
     color: #fff;
     background-color: #27213d;
@@ -116,6 +120,97 @@ body {
     justify-self: center;
     object-fit: contain;
 }
+
+/* Header Contacts */
+
+.header-contacts-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.45);
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: opacity .35s ease, visibility .35s ease;
+    z-index: 9999;
+}
+
+.header-contacts-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.header-contacts-window {
+    background: white;
+    max-width: 90vh;
+    max-height: 90vh;
+    border-radius: 18px;
+    overflow-y: auto;
+    transform: translateY(30px);
+    opacity: 0;
+    transition: 0.4s ease;
+}
+
+.header-contacts-overlay.show .header-contacts-window {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.header-contacts-overlay:not(.show) .header-contacts-window {
+    transform: translateY(30px);
+    opacity: 0;
+}
+
+
+.header-contacts-title {
+    color: #303030;
+    font-family: "Montserrat", sans-serif;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 43.88px;
+}
+
+.header-contacts-block {
+    padding: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: center;
+}
+
+.header-contacts-detail {
+
+}
+
+.header-contacts-detail-title {
+    color: #303030;
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.header-contacts-detail-link {
+    color: #0000007A;
+    font-family: 'Manrope', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.header-contacts-detail-tel {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    color: #0000007A;
+    font-family: 'Manrope', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* Header Contacts */
 
 
 /* Header */
@@ -986,6 +1081,7 @@ body {
 
 
 /* Pontons-Anchors */
+
 
 
 
