@@ -135,7 +135,7 @@
         -webkit-tap-highlight-color: transparent;
     }
 
-    a, button {
+    .nav * {
       -webkit-tap-highlight-color: transparent;
       tap-highlight-color: transparent; /* запас для других движков */
     }
@@ -595,6 +595,7 @@
     }
 
 }
+
 
 
 
