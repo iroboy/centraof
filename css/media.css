@@ -135,6 +135,11 @@
         -webkit-tap-highlight-color: transparent;
     }
 
+    a, button {
+      -webkit-tap-highlight-color: transparent;
+      tap-highlight-color: transparent; /* запас для других движков */
+    }
+
 }
 
 @media(max-width: 1067px) {
@@ -590,6 +595,7 @@
     }
 
 }
+
 
 
 
